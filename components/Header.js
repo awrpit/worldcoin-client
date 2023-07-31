@@ -19,10 +19,11 @@ function Header() {
          
       </a>
       
-      <a    className=" flex items-center text-l py-1 px-4 rounded-md bg-black text-white hover:bg-slate-700"
+      {/* <a    className=" flex items-center text-l py-1 px-4 rounded-md bg-black text-white hover:bg-slate-700"
       href="https://worldcoin.org/download-app">
+      
    Haystack 🚀
-      </a>
+      </a> */}
 </div>
     
        
