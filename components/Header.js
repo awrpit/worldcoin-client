@@ -5,7 +5,7 @@ function Header() {
     <div className="w-full bg-slate-50 p-4 flex flex-row justify-between">
       <div className="flex flex-row">
         <Image src="/worldcoin.svg" width={50} height={50} alt="worldcoin" />
-        <h1 className="font-georgia text-lg md:text-3xl my-auto">Worldcoin</h1>
+        <h1 className="font-georgia text-lg md:text-3xl my-auto">WorldcoinGPT</h1>
       </div>
 <div className="flex flex-flow gap-2">
   <a
@@ -13,8 +13,8 @@ function Header() {
       href="https://worldcoin.org/download-app"
     >
     <IconDownload />
-    <span className="ml-3 hidden md:block">
-   Download
+    <span className="ml-3 text-l hidden md:block">
+   Download the App
     </span>
          
       </a>
