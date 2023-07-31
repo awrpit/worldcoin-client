@@ -3,7 +3,6 @@ import Footer from "./Footer";
 const ChatBox = ({ input, setInput, submitHandler, isLoading }) => {
   return (
     <div className="fixed inset-x-0 bottom-0 z-10">
-      <div className="w-full md:w-7/12 mx-auto px-4">
         <div className="flex h-10 items-center justify-center">
           {isLoading && (
             <button 
@@ -17,7 +16,7 @@ const ChatBox = ({ input, setInput, submitHandler, isLoading }) => {
             </button>
           )}
         </div>
-        <div className="border-t px-4 py-2 shadow-lg sm:rounded-t-xl sm:border md:py-4 bg-white">
+        <div className="border-t w-full md:w-7/12 md:mx-auto px-4 py-2 shadow-lg sm:rounded-t-xl sm:border md:py-4 bg-white">
           <form
             onSubmit={submitHandler}
             className="flex items-center justify-between"
@@ -39,9 +38,9 @@ const ChatBox = ({ input, setInput, submitHandler, isLoading }) => {
           <Footer />
         </div>
       </div>
-    </div>
   );
 };
+
 
 function IconArrowElbow() {
   return (
