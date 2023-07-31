@@ -4,7 +4,7 @@ function WelcomeMessage({ setInput }) {
   const sampleMessages = [
     "What is worldcoin?",
     "Who are the founders of worldcoin?",
-    "What are orbs?",
+    "How does worldcoin work?",
   ];
 
   return (
