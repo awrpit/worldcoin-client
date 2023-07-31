@@ -9,10 +9,10 @@ function Message({ type, content }) {
       {type === "user" ? (
         <>
           <Image
-            src="/response.svg"
+            src="/usericon.svg"
             width={30}
             height={30}
-            alt="worldcoin"
+            alt="usericon"
             className="m-1"
           />
           <p className="text-md md:text-l py-1 px-2 font-georgia">{content}</p>
@@ -20,10 +20,10 @@ function Message({ type, content }) {
       ) : (
         <>
           <Image
-            src="/usericon.svg"
+            src="/response.svg"
             width={30}
             height={30}
-            alt="worldcoin"
+            alt="response"
             className="m-1"
           />
           <p className="text-md md:text-l py-1 px-2 font-georgia">
