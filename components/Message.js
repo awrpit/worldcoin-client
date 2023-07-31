@@ -9,11 +9,18 @@ function Message({ type, content }) {
       } flex flex-row `}
     >
       {type === "user" ? (
-        <Image src="/worldcoin.svg" width={40} height={40} alt="worldcoin" />
+        <>
+          <Image src="/worldcoin.svg" width={40} height={40} alt="worldcoin" />
+          <p className="text-lg md:text-xl py-1 px-2 font-georgia">{content}</p>
+        </>
       ) : (
-        <Image src="/next.svg" width={40} height={40} alt="worldcoin" />
+        <>
+          <Image src="/next.svg" width={40} height={40} alt="worldcoin" />
+          <p className="text-lg md:text-xl py-1 px-2 font-georgia">
+            {content.sourceText}
+          </p>
+        </>
       )}
-      <p className="text-lg md:text-xl py-1 px-2 font-georgia">{content}</p>
     </div>
   );
 }

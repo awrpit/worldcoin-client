@@ -8,11 +8,10 @@ function WelcomeMessage({ setInput }) {
   ];
 
   return (
-    <div className="flex flex-grow rounded border items-center justify-center">
+    <div className="flex h-screen w-screen rounded border items-center justify-center">
       <div className="px-4 py-6 rounded-lg bg-slate-200 font-georgia m-3">
         <h1 className="text-xl md:text-3xl pb-3">
-          {" "}
-          Welcome to the WorldCoinGPT ChatBot!{" "}
+          Welcome to the WorldCoinGPT ChatBot!
         </h1>
         <p className="max-w-fit text-md text-gray-500 py-2">
           You can get started with asking one of the following questions of the
