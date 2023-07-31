@@ -8,19 +8,28 @@ import axios from "axios";
 function Home() {
   const [input, setInput] = useState();
   const [chatLog, setchatLog] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   async function submitHandler(e) {
     e.preventDefault();
-    setchatLog([...chatLog, { type: "user", content: input }]);
-    const responseMessage = await fetchData(input);
-    setchatLog([...chatLog, { type: "bot", content: responseMessage }]);
-
+    setchatLog((prevLog) => [...prevLog, { type: "user", content: input }]);
     setInput("");
+    setIsLoading(true);
+    const responseMessage = await fetchData(input);
+    console.log("response", responseMessage);
+    setchatLog((prevLog) => [
+      ...prevLog,
+      { type: "bot", content: responseMessage },
+    ]);
+    setIsLoading(false);
+    console.log(chatLog);
   }
 
+  async function regenerate() {}
   async function fetchData(question) {
-    const data = JSON.stringify(question);
-
+    const data = JSON.stringify({
+      question: question,
+    });
     let config = {
       method: "post",
       maxBodyLength: Infinity,
@@ -32,6 +41,7 @@ function Home() {
     };
     try {
       const response = await axios.request(config);
+      console.log(response);
       const data = response.data;
       const { sourcesText, links } = extractLinksAndSources(data);
 
@@ -80,6 +90,7 @@ function Home() {
         setInput={setInput}
         input={input}
         submitHandler={submitHandler}
+        isLoading={isLoading}
       />
     </div>
   );

@@ -4,20 +4,30 @@ import Image from "next/image";
 function Message({ type, content }) {
   return (
     <div
-      className={`p-3 ${
-        type === "user" ? "bg-blue-200" : "bg-gray-200"
-      } flex flex-row `}
+      className={`p-3 ${type === "user" ? "" : "bg-gray-100"} flex flex-row `}
     >
       {type === "user" ? (
         <>
-          <Image src="/worldcoin.svg" width={40} height={40} alt="worldcoin" />
-          <p className="text-lg md:text-xl py-1 px-2 font-georgia">{content}</p>
+          <Image
+            src="/response.svg"
+            width={30}
+            height={30}
+            alt="worldcoin"
+            className="m-1"
+          />
+          <p className="text-md md:text-l py-1 px-2 font-georgia">{content}</p>
         </>
       ) : (
         <>
-          <Image src="/next.svg" width={40} height={40} alt="worldcoin" />
-          <p className="text-lg md:text-xl py-1 px-2 font-georgia">
-            {content.sourceText}
+          <Image
+            src="/usericon.svg"
+            width={30}
+            height={30}
+            alt="worldcoin"
+            className="m-1"
+          />
+          <p className="text-md md:text-l py-1 px-2 font-georgia">
+            {content.sourcesText}
           </p>
         </>
       )}
