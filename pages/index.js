@@ -25,10 +25,9 @@ function Home() {
     console.log(chatLog);
   }
 
-  async function regenerate() {}
   async function fetchData(question) {
     const data = JSON.stringify({
-      question: question,
+      question: `${question}, answer strictly in markdown, return the response in a json object with answer(contains markdown) and sources`,
     });
     let config = {
       method: "post",
@@ -41,40 +40,34 @@ function Home() {
     };
     try {
       const response = await axios.request(config);
-      console.log(response);
       const data = response.data;
-      const { sourcesText, links } = extractLinksAndSources(data);
-
-      return {
-        sourcesText,
-        links,
-      };
+      return data;
     } catch (error) {
       console.log(error);
       return null;
     }
   }
 
-  function extractLinksAndSources(text) {
-    // Regular expression to match URLs (simplified for this use case)
-    const urlRegex = /(https?:\/\/[^\s]+)/g;
+  // function extractLinksAndSources(text) {
+  //   // Regular expression to match URLs (simplified for this use case)
+  //   const urlRegex = /(https?:\/\/[^\s]+)/g;
 
-    // Split the text into lines
-    const lines = text.split("\n");
+  //   // Split the text into lines
+  //   const lines = text.split("\n");
 
-    // Find the line index of 'SOURCES:'
-    const sourcesIndex = lines.findIndex((line) => line.trim() === "SOURCES:");
+  //   // Find the line index of 'SOURCES:'
+  //   const sourcesIndex = lines.findIndex((line) => line.trim() === "SOURCES:");
 
-    const sourcesText = lines.slice(0, sourcesIndex).join("\n").trim();
+  //   const sourcesText = lines.slice(0, sourcesIndex).join("\n").trim();
 
-    // Extract the links (all lines after 'SOURCES:')
-    const linksText = lines
-      .slice(sourcesIndex + 1)
-      .join("\n")
-      .trim();
-    const links = linksText.match(urlRegex);
-    return { sourcesText, links };
-  }
+  //   // Extract the links (all lines after 'SOURCES:')
+  //   const linksText = lines
+  //     .slice(sourcesIndex + 1)
+  //     .join("\n")
+  //     .trim();
+  //   const links = linksText.match(urlRegex);
+  //   return { sourcesText, links };
+  // }
 
   return (
     <div className="flex flex-col h-screen">

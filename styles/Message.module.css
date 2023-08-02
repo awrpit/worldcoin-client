@@ -1,0 +1,45 @@
+.markdown {
+  padding: 4px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.markdown h1 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.markdown h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.markdown p {
+  font-size: 16px;
+  padding: 4px 8px;
+}
+
+.markdown .react-syntax-highlighter {
+  margin: 16px 0;
+  border-radius: 4px;
+  overflow: auto;
+}
+
+.markdown ul,
+.markdown ol {
+  margin-bottom: 16px;
+  padding-left: 16px;
+}
+
+.markdown li {
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.markdown a {
+    color: #0366d6;
+    text-decoration: none;
+}
+.markdown a:hover {
+    color: #0366d7;
+    text-decoration: underline;
+}
