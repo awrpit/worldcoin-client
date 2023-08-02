@@ -56,11 +56,8 @@ function Message({ type, content }) {
           }
               </Popover.Panel>
             </Popover>
-            <div >
-           
-
+            <div >      
             </div>
-        
             </div>
             </>
           {/* </p> */}
@@ -95,14 +92,14 @@ const MarkdownDisplay = ({ content }) => {
               {...props}
             />
           ) : (
-            <div className="inline-block mx-1 max-w-[99%] overflow-x-auto">
+            // <div className="inline-block mx-1 max-w-[99%] overflow-x-auto">
               <code
-                className="rounded-md px-1 pt-1 bg-dark-gray text-light-gray"
+                className="rounded-md px-1 bg-dark-gray text-light-gray"
                 {...props}
               >
                 {children}
               </code>
-            </div>
+            // </div>
           );
         },
       }}
